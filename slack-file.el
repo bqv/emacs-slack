@@ -111,7 +111,7 @@
 
 (defmethod slack-message-equal ((f slack-file) other)
   (string= (oref f id) (oref other id)))
-
+;; TODO do not remove old file, update old file and concat it's channels, ims, groups
 (defmethod slack-file-pushnew ((f slack-file) team)
   (let ((room (slack-file-room-obj team)))
     (with-slots (messages) room
