@@ -53,7 +53,7 @@
           (slack-message-unescape-string attachment-string team))))))
 
 (defmethod slack-message-sender-name ((m slack-bot-message) team)
-  (slack-bot-name m team))
+  (oref m username))
 
 (defmethod slack-message-sender-id ((m slack-bot-message))
   (oref m bot-id))
